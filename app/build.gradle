@@ -1,0 +1,100 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+apply plugin: 'me.tatarka.retrolambda'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            buildConfigField 'String', 'HOST_NAME', '"http://54.251.151.101:9000"'
+        }
+
+        debug {
+            buildConfigField 'String', 'HOST_NAME', '"http://54.251.151.101:9000"'
+        }
+    }
+
+    productFlavors {
+        dev {
+            applicationId "com.avinnovz.sanmateoteachersapp.dev"
+            resValue "string", "app_name", "Teachers App"
+        }
+
+        prod {
+            applicationId "com.avinnovz.sanmateoteachersapp"
+            resValue "string", "app_name", "Teachers App"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile("com.android.support.test.espresso:espresso-core:$rootProject.ext.espressoVersion", {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    //Android
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support.constraint:constraint-layout:$rootProject.ext.constraintLayoutVersion"
+    testCompile "junit:junit:$rootProject.ext.junitVersion"
+
+    //Calligraphy
+    compile "uk.co.chrisjenx:calligraphy:$rootProject.ext.calligraphyVersion"
+
+    //Sdp
+    compile "com.intuit.sdp:sdp-android:$rootProject.ext.sdpVersion"
+
+    //Lombok
+    provided "org.projectlombok:lombok:$rootProject.ext.lombokVersion"
+    apt "org.projectlombok:lombok:$rootProject.ext.lombokVersion"
+
+    //Material
+    compile "com.github.rey5137:material:$rootProject.ext.reyMaterialVersion"
+
+    //Butterknife
+    apt "com.jakewharton:butterknife-compiler:$rootProject.ext.butterKnifeVersion"
+    compile "com.jakewharton:butterknife:$rootProject.ext.butterKnifeVersion"
+
+    //Picasso
+    compile "com.jakewharton.picasso:picasso2-okhttp3-downloader:$rootProject.ext.picassoVersion"
+
+    //Retrofit
+    compile "com.squareup.okhttp3:logging-interceptor:$rootProject.ext.loggingInterceptorVesion"
+    compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
+    compile "com.squareup.retrofit2:adapter-rxjava:$rootProject.ext.retrofitVersion"
+
+    //Rx
+    compile "io.reactivex:rxjava:$rootProject.ext.rxJavaVersion"
+    compile "io.reactivex:rxandroid:$rootProject.ext.rxAndroidVersion"
+
+    //Dagger
+    apt "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
+    compile "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
+    provided "javax.annotation:jsr250-api:$rootProject.ext.javaxAnnotationVersion"
+
+    //EventBus
+    compile "org.greenrobot:eventbus:$rootProject.ext.eventbusVersion"
+
+    //LoadingIndicator
+    compile "com.wang.avi:library:$rootProject.ext.wangAviVersion"
+
+}

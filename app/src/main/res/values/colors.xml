@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#E91E63</color>
+    <color name="colorPrimaryDark">#C2185B</color>
+    <color name="colorAccent">#1466cb</color>
+    <color name="colorPrimaryLight">#F8BBD0</color>
+
+    <!--<color name="colorPrimary">#E91E63</color>-->
+    <!--<color name="colorPrimaryDark">#C2185B</color>-->
+    <!--<color name="colorAccent">#1466cb</color>-->
+    <!--<color name="colorPrimaryLight">#F8BBD0</color>-->
+
+    <color name="white">#FFFFFF</color>
+
+    //use for edittext bg
+    <color name="materialBlueGray50">#eceff1</color>
+
+    //use for primary text
+    <color name="materialGray900">#212121</color>
+
+    //use for secondary text or hint
+    <color name="materialGray600">#757575</color>
+
+    //use for success message
+    <color name="materialLightGreen700">#689f38</color>
+
+    //use for error message
+    <color name="materialRed500">#f44336</color>
+
+    //use for warning message
+    <color name="materialOrange500">#ff9800</color>
+
+</resources>

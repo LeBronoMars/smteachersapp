@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme.Label.Title" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textSize">@dimen/fontsize_title</item>
+        <item name="android:textColor">@color/materialGray900</item>
+    </style>
+
+    <style name="AppTheme.Label.Body1" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textSize">@dimen/fontsize_body1</item>
+        <item name="android:textColor">@color/materialGray900</item>
+    </style>
+
+    <style name="AppTheme.Label.Display1" parent="TextAppearance.AppCompat.Display1">
+        <item name="android:textSize">@dimen/fontsize_display1</item>
+        <item name="android:textColor">@color/materialGray900</item>
+    </style>
+
+    <style name="AppTheme.Label.Display2" parent="TextAppearance.AppCompat.Display2">
+        <item name="android:textSize">@dimen/fontsize_display2</item>
+        <item name="android:textColor">@color/materialGray900</item>
+    </style>
+
+    <style name="AppTheme.Label.Display3" parent="TextAppearance.AppCompat.Display3">
+        <item name="android:textSize">@dimen/fontsize_display3</item>
+        <item name="android:textColor">@color/materialGray900</item>
+    </style>
+
+    <style name="AppTheme.Label.Display4" parent="TextAppearance.AppCompat.Display4">
+        <item name="android:textSize">@dimen/fontsize_display4</item>
+        <item name="android:textColor">@color/materialGray900</item>
+    </style>
+
+    <style name="AppTheme.Label.Headline" parent="TextAppearance.AppCompat.Headline">
+        <item name="android:textSize">@dimen/fontsize_headline</item>
+        <item name="android:textColor">@color/materialGray900</item>
+    </style>
+
+    <style name="AppTheme.Label.SubHead" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textSize">@dimen/fontsize_subheading</item>
+        <item name="android:textColor">@color/materialGray900</item>
+    </style>
+
+</resources>

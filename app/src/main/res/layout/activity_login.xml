@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_graidient"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:padding="@dimen/spacing_base2x"
+    tools:context="com.avinnovz.sanmateoteachersapp.screens.login.LoginActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidlineTopMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidlineBottomMargin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="511dp" />
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="@dimen/_80sdp"
+        android:layout_height="@dimen/_80sdp"
+        android:src="@drawable/ic_app_icon"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidlineTopMargin" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        style="@style/AppTheme.Label.Display1"
+        fontPath="fonts/Montserrat-Bold.otf"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_base2x"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo"
+        tools:ignore="MissingPrefix" />
+
+    <TextView
+        android:id="@+id/tv_sub_heading"
+        style="@style/AppTheme.Label.Title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/login.label.sanmateo"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
+        tools:ignore="MissingPrefix" />
+
+    <EditText
+        android:id="@+id/et_username"
+        style="@style/AppTheme.TextFieldNext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_base4x"
+        android:hint="@string/login.hint.username"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_sub_heading" />
+
+    <EditText
+        android:id="@+id/et_password"
+        style="@style/AppTheme.TextFieldPasswordDone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_base"
+        android:hint="@string/login.hint.password"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_username" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_login"
+        style="@style/AppTheme.ButtonStyle.Default"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_base4x"
+        android:text="@string/login.button.login"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_forgot_passsword"
+        style="@style/AppTheme.ButtonStyle.Borderless"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_base"
+        android:text="@string/login.button.forgotpassword"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+
+</android.support.constraint.ConstraintLayout>

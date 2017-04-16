@@ -1,0 +1,20 @@
+<resources>
+    <!--ALL-->
+    <string name="all.title.error.connection">Connection Error</string>
+    <string name="all.message.error.unabletoconnect">Unable to connect to server, Please try again later after a few minutes. Thank you!</string>
+    <string name="all.message.error.sockettimeout">Unable to finish request due to slow internet connection.</string>
+    <string name="all.message.error.servererror">Unable to communicate with server, Please try again later.</string>
+    <string name="all.message.error.noconnection">Please check your network connection and try again.</string>
+    <string name="all.message.error.requiredfield">This is a required field.</string>
+    <string name="all.button.close">Close</string>
+
+
+    <!--LOGIN-->
+    <string name="login.label.sanmateo">San Mateo</string>
+    <string name="login.hint.username">Username</string>
+    <string name="login.hint.password">Password</string>
+    <string name="login.button.login">Login</string>
+    <string name="login.button.forgotpassword">Forgot your password?</string>
+
+
+</resources>
