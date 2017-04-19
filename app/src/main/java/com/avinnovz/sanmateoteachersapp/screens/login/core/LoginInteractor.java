@@ -29,20 +29,26 @@ public class LoginInteractor extends BaseInteractor implements LoginMvp.Interact
     @Inject
     TokenManager tokenManager;
 
+    @Inject
+    Retrofit retrofit;
+
+    @Inject
+    ApiInterface apiInterface;
+
     LoginPresenter presenter;
     ApiRequestHelper requestHelper;
 
-    public LoginInteractor(LoginPresenter presenter, Retrofit retrofit, ApiInterface apiInterface) {
-        //Attach the presenter to make it accessible on the BaseInteractor
-        attachPresenter(presenter);
-        this.presenter = presenter;
-        this.requestHelper = new ApiRequestHelper(this, retrofit, apiInterface);
-
+    public LoginInteractor(LoginPresenter presenter) {
         DaggerLoginComponent.builder()
                 .appComponent(BaseApplication.getInstance().getAppComponent())
                 .loginModule(new LoginModule(null))
                 .build()
                 .inject(this);
+
+        //Attach the presenter to make it accessible on the BaseInteractor
+        attachPresenter(presenter);
+        this.presenter = presenter;
+        this.requestHelper = new ApiRequestHelper(this, retrofit, apiInterface);
     }
 
     @Override
