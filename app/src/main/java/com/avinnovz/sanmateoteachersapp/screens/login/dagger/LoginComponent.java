@@ -3,6 +3,7 @@ package com.avinnovz.sanmateoteachersapp.screens.login.dagger;
 import com.avinnovz.sanmateoteachersapp.dagger.components.AppComponent;
 import com.avinnovz.sanmateoteachersapp.dagger.scopes.CustomScope;
 import com.avinnovz.sanmateoteachersapp.screens.login.LoginActivity;
+import com.avinnovz.sanmateoteachersapp.screens.login.core.LoginInteractor;
 
 import dagger.Component;
 
@@ -14,4 +15,5 @@ import dagger.Component;
 @Component(dependencies = AppComponent.class, modules = LoginModule.class)
 public interface LoginComponent {
     void inject(LoginActivity loginActivity);
+    void inject(LoginInteractor loginInteractor);
 }
