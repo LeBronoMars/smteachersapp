@@ -97,4 +97,7 @@ dependencies {
     //LoadingIndicator
     compile "com.wang.avi:library:$rootProject.ext.wangAviVersion"
 
+    //Unit Test
+    testCompile "org.robolectric:robolectric:$rootProject.ext.robolectricVersion"
+
 }
