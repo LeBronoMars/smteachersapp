@@ -15,7 +15,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
  * Created by jayan on 4/13/2017.
  */
 
-public class BaseApplication extends Application {
+public class  BaseApplication extends Application {
 
     private static BaseApplication baseApplication = new BaseApplication();
     private static AppComponent appComponent;

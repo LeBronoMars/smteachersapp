@@ -12,31 +12,40 @@ import com.avinnovz.sanmateoteachersapp.data.api.ApiAction;
 
 public interface BaseMvp {
 
-    interface Interactor{
+    interface Interactor {
         void attachPresenter(BaseMvp.Presenter presenter);
+
         boolean isConnected();
     }
 
-    interface View{
+    interface View {
         Context getContext();
 
         void showProgressDialog();
+
         void dismissProgressDialog();
 
         void showFailedToConnectError();
+
         void showSocketTimeoutError();
+
         void showServerRelatedError();
+
         void showNoConnectionError();
 
         void showError(final ApiAction apiAction, final String header, final String errorMessage,
                        final String positiveText, final String negativeText);
 
         void showToast(int stringId);
+
         void showToast(String message);
 
         void moveToOtherActivity(Class clz);
+
         void moveToOtherActivity(Class clz, Bundle bundle);
+
         void moveToOtherActivityWithSharedElements(Class clz, android.view.View view, String transitionName);
+
         void moveToOtherActivityWithSharedElements(Class clz, ActivityOptionsCompat options);
 
         void finishActivity();
@@ -48,17 +57,22 @@ public interface BaseMvp {
         Context getContext();
 
         void showProgressDialog();
+
         void dismissProgressDialog();
 
         void showFailedToConnectError();
+
         void showSocketTimeoutError();
+
         void showServerRelatedError();
+
         void showNoConnectionError();
 
         void showError(final ApiAction apiAction, final String header, final String errorMessage,
                        final String positiveText, final String negativeText);
 
         void showToast(int stringId);
+
         void showToast(String message);
 
     }
