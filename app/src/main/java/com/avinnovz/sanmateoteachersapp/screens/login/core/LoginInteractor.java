@@ -1,5 +1,6 @@
 package com.avinnovz.sanmateoteachersapp.screens.login.core;
 
+import com.avinnovz.sanmateoteachersapp.base.BaseApplication;
 import com.avinnovz.sanmateoteachersapp.base.BaseInteractor;
 import com.avinnovz.sanmateoteachersapp.data.api.ApiAction;
 import com.avinnovz.sanmateoteachersapp.data.api.ApiInterface;
@@ -9,6 +10,8 @@ import com.avinnovz.sanmateoteachersapp.helpers.LogHelper;
 import com.avinnovz.sanmateoteachersapp.helpers.TokenManager;
 import com.avinnovz.sanmateoteachersapp.models.response.GenericResponse;
 import com.avinnovz.sanmateoteachersapp.models.response.Token;
+import com.avinnovz.sanmateoteachersapp.screens.login.dagger.DaggerLoginComponent;
+import com.avinnovz.sanmateoteachersapp.screens.login.dagger.LoginModule;
 
 import java.io.IOException;
 
@@ -21,7 +24,7 @@ import retrofit2.adapter.rxjava.HttpException;
  * Created by jayan on 4/14/2017.
  */
 
-public class LoginInteractor extends BaseInteractor implements  LoginMvp.Interactor , OnApiRequestListener{
+public class LoginInteractor extends BaseInteractor implements LoginMvp.Interactor, OnApiRequestListener {
 
     @Inject
     TokenManager tokenManager;
@@ -29,13 +32,18 @@ public class LoginInteractor extends BaseInteractor implements  LoginMvp.Interac
     LoginPresenter presenter;
     ApiRequestHelper requestHelper;
 
-    public LoginInteractor(LoginPresenter presenter, Retrofit retrofit, ApiInterface apiInterface){
+    public LoginInteractor(LoginPresenter presenter, Retrofit retrofit, ApiInterface apiInterface) {
         //Attach the presenter to make it accessible on the BaseInteractor
         attachPresenter(presenter);
         this.presenter = presenter;
-        this.requestHelper = new ApiRequestHelper(this,retrofit,apiInterface);
-    }
+        this.requestHelper = new ApiRequestHelper(this, retrofit, apiInterface);
 
+        DaggerLoginComponent.builder()
+                .appComponent(BaseApplication.getInstance().getAppComponent())
+                .loginModule(new LoginModule(null))
+                .build()
+                .inject(this);
+    }
 
     @Override
     public void onApiRequestStart(ApiAction apiAction) {
@@ -71,6 +79,8 @@ public class LoginInteractor extends BaseInteractor implements  LoginMvp.Interac
     public void onApiRequestSuccess(ApiAction apiAction, Object result) {
         presenter.dismissProgressDialog();
         if (apiAction.equals(ApiAction.POST_LOGIN)) {
+            LogHelper.log("api", "token manager is null " + (tokenManager == null));
+            LogHelper.log("api", "token --> " + ((Token) result).getToken());
             tokenManager.setToken((Token) result);
             presenter.showToast("Successful login");
         }
