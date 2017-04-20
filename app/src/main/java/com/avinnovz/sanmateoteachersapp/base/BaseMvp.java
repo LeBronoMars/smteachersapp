@@ -21,6 +21,8 @@ public interface BaseMvp {
     interface View {
         Context getContext();
 
+        boolean hasError();
+
         void showProgressDialog();
 
         void dismissProgressDialog();

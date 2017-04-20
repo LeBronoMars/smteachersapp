@@ -1,7 +1,7 @@
 package com.avinnovz.sanmateoteachersapp.screens.login;
 
 import android.os.Bundle;
-import android.widget.EditText;
+import android.support.design.widget.TextInputLayout;
 
 import com.avinnovz.sanmateoteachersapp.R;
 import com.avinnovz.sanmateoteachersapp.base.BaseActivity;
@@ -17,15 +17,17 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
+import static com.avinnovz.sanmateoteachersapp.R.id.til_username;
+
 public class LoginActivity extends BaseActivity implements LoginMvp.View{
 
     @Inject
     LoginPresenter presenter;
 
-    @BindView(R.id.et_username)
-    EditText etUsername;
-    @BindView(R.id.et_password)
-    EditText etPassword;
+    @BindView(til_username)
+    TextInputLayout tilUsername;
+    @BindView(R.id.til_password)
+    TextInputLayout tilPassword;
 
 
     @Override
@@ -40,24 +42,29 @@ public class LoginActivity extends BaseActivity implements LoginMvp.View{
                 .loginModule(new LoginModule(this))
                 .build().inject(this);
 
-        etUsername.setText("nedflanders");
-        etPassword.setText("P@ssw0rd");
+        /** use to clear error when typing */
+        addDefaultTextWatcher(tilUsername);
+        addDefaultTextWatcher(tilPassword);
+
+        tilUsername.getEditText().setText("nedflanders");
+        tilPassword.getEditText().setText("P@ssw0rd");
     }
 
     @OnClick(R.id.btn_login)
     public void login(){
-        presenter.onAuthenticateUser(etUsername.getText().toString(), etPassword.getText().toString());
+        presenter.onAuthenticateUser(tilUsername.getEditText().getText().toString(),
+                tilPassword.getEditText().getText().toString());
     }
 
     @Override
     public void setUsernameEmptyError() {
-        etUsername.setError(getStringFromResource(R.string.all_message_error_requiredfield));
-        etUsername.requestFocus();
+        tilUsername.setError(getStringFromResource(R.string.all_message_error_requiredfield));
+        tilUsername.getEditText().requestFocus();
     }
 
     @Override
     public void setPasswordEmptyError() {
-        etPassword.setError(getStringFromResource(R.string.all_message_error_requiredfield));
-        etPassword.requestFocus();
+        tilPassword.setError(getStringFromResource(R.string.all_message_error_requiredfield));
+        tilPassword.getEditText().requestFocus();
     }
 }

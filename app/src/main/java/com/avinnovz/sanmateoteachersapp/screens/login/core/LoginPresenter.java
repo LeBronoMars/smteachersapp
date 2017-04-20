@@ -24,11 +24,11 @@ public class LoginPresenter extends BasePresenter implements LoginMvp.Presenter 
 
     @Override
     public void onAuthenticateUser(String username, String password) {
-        if (username.isEmpty()) {
-            view.setUsernameEmptyError();
-        } else if (password.isEmpty()) {
-            view.setPasswordEmptyError();
-        } else {
+        /** Arrange fields in descending order to prioritize the focus on the view that comes first */
+        if (password.isEmpty())  view.setPasswordEmptyError();
+        if (username.isEmpty())  view.setUsernameEmptyError();
+
+        if (!view.hasError()){
             interactor.onAuthenticateUser(username, password);
         }
     }

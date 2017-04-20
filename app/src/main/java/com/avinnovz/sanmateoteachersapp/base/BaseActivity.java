@@ -7,12 +7,14 @@ import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -23,7 +25,10 @@ import com.avinnovz.sanmateoteachersapp.R;
 import com.avinnovz.sanmateoteachersapp.data.api.ApiAction;
 import com.avinnovz.sanmateoteachersapp.dialogs.CustomProgressDialog;
 import com.avinnovz.sanmateoteachersapp.interfaces.OnConfirmDialogListener;
+import com.avinnovz.sanmateoteachersapp.textwatchers.BaseTextWatcher;
 import com.rey.material.app.Dialog;
+
+import java.util.ArrayList;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -34,7 +39,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class BaseActivity extends AppCompatActivity implements BaseMvp.View {
     private CustomProgressDialog progressDialog;
     private Toast toast;
-
+    ArrayList<String> errors;
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
@@ -76,6 +81,16 @@ public class BaseActivity extends AppCompatActivity implements BaseMvp.View {
     @Override
     public Context getContext() {
         return getApplicationContext();
+    }
+
+    @Override
+    public boolean hasError(){
+        errors = new ArrayList<>();
+        ViewGroup viewGroup = (ViewGroup) getWindow().getDecorView().getRootView();
+        findAllTextInputLayout(viewGroup);
+        if (errors.size() > 0)
+            return true;
+        else return false;
     }
 
     @Override
@@ -206,7 +221,7 @@ public class BaseActivity extends AppCompatActivity implements BaseMvp.View {
                                   final boolean cancelable) {
         final Dialog dialog = new Dialog(this);
         dialog.setTitle(title);
-        dialog.setContentView(R.layout.custom_confirm_dialog);
+        dialog.setContentView(R.layout.dialog_confirm);
         ((TextView) dialog.findViewById(R.id.tv_message)).setText(message);
         final Display display = getWindowManager().getDefaultDisplay();
         final Point size = new Point();
@@ -233,6 +248,24 @@ public class BaseActivity extends AppCompatActivity implements BaseMvp.View {
             }
         });
         dialog.show();
+    }
+
+    protected void addDefaultTextWatcher(TextInputLayout textInputLayout){
+        textInputLayout.getEditText().addTextChangedListener(new BaseTextWatcher(textInputLayout));
+    }
+
+    protected void findAllTextInputLayout(ViewGroup viewGroup) {
+        int count = viewGroup.getChildCount();
+        for (int i = 0; i < count; i++) {
+            View view = viewGroup.getChildAt(i);
+            if (view instanceof ViewGroup && !(view instanceof TextInputLayout))
+                findAllTextInputLayout((ViewGroup) view);
+            else if (view instanceof TextInputLayout) {
+                TextInputLayout textInputLayout = (TextInputLayout) view;
+                if (textInputLayout.getError() != null)
+                    errors.add(textInputLayout.getError().toString());
+            }
+        }
     }
 
 }

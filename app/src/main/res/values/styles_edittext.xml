@@ -7,18 +7,20 @@
     </style>
 
     <style name="AppTheme.TextInputLayoutStyle" parent="TextAppearance.AppCompat">
+        <item name="android:background">@drawable/bg_edittext</item>
         <item name="android:textColorHint">@color/materialGray600</item>
+        <item name="android:padding">@dimen/_5sdp</item>
         <item name="android:labelTextSize">@dimen/fontsize_texthint</item>
     </style>
 
     <style name="AppTheme.TextField" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:background">@android:color/transparent</item>
         <item name="android:textColor">@color/materialGray900</item>
         <item name="android:textSize">@dimen/fontsize_textfield</item>
         <item name="android:textColorHint">@color/materialGray600</item>
-        <item name="android:background">@drawable/bg_edittext</item>
-        <item name="android:padding">@dimen/_10sdp</item>
         <item name="fontPath">fonts/OpenSans-Regular.ttf</item>
         <item name="android:maxLines">1</item>
+        <item name="android:padding">@dimen/_5sdp</item>
         <item name="android:inputType">text|textNoSuggestions</item>
     </style>
 

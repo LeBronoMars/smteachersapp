@@ -100,4 +100,6 @@ dependencies {
     //Unit Test
     testCompile "org.robolectric:robolectric:$rootProject.ext.robolectricVersion"
 
+    compile "com.github.scottyab:showhidepasswordedittext:$rootProject.ext.showHidePasswordEditTextVersion"
+
 }
