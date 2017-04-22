@@ -45,9 +45,6 @@ public class LoginActivity extends BaseActivity implements LoginMvp.View{
         /** use to clear error when typing */
         addDefaultTextWatcher(tilUsername);
         addDefaultTextWatcher(tilPassword);
-
-        tilUsername.getEditText().setText("nedflanders");
-        tilPassword.getEditText().setText("P@ssw0rd");
     }
 
     @OnClick(R.id.btn_login)
