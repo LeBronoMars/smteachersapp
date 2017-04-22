@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sm-teachers-android",
+  "private_key_id": "1ba32b07ed44c8fba41570934e3f53af9f87223a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDB+2gX9fRqfeSf\nflpLEucMoDCPDW+4iCcc7SPBv/flCXrSCGa7UZ7c+/Wzgk3bBv+MKDKqqdGT+pj7\nEqjFH6RY0CaeZIIaZ4Oz+0UZBmDTiDcOevRpx9JTdGinHNs0JOO4f0OM4t/CihCL\nqJxboiaLjVmAMzY1oWuzSPlQb1WAzXTsipRhbbjCQPfCnOnT3Vg+1cB6awB31gzE\nZhcy98c9UwKaczKKxPkJh8PMpJpydaTaCNxg1+kMni7DCXfFL/E0DNSWeoaTw2tI\nvMBvEalEk8O/L7YnclDtSCrydoBZe45tgxsvw+1qqTuMUA0kl+eQEhCu/xeWaqn2\nNQOUl89jAgMBAAECggEADRFhttOD7rSidTgu3wXb+NbFzq1KDHVnpSQ4l3HWQmC8\nHHAic5YRDLQQnlI16n5zMr72gtbD3qMwMSHVqsnx6WXEZEFDHoJAthxEUGZEmZuA\nkgIoewPSIHskHbXs8ntVt/Ui2Nfj2Rgx+yaVufqXfCk+kUth6IUCW2acHRYS/YU7\nuqW2fY92DgLujlAmQ0ZJK6Hwm0RQTGhNAXAWIeEvZzzZCisSk349jBluRbkrQa4N\n8pi+SLwRvD16maUrjEODfEzpRy37wD1DAIGhgSjLvaW6J3puW1zhZUVJQL1LHLWw\nLYrgz4rdgRPz5oZy63x8KQXGOSpM0m5X/6GtfwqiSQKBgQDsToFo/nHVxoT1NJnP\nxjhQ/dG1nutW8FulpIxd7HexVz2PM398eQxqiLgyhT3xklBOn7zHlKR7JBomyQuF\nEvrnSuOfCs9EKKnpgfYArw6zwePaLtNJFXCUwbIaumDN6LkleZAnyGYMQ+w0ftZz\nefIMJlU965zerxdirui5kjR9lwKBgQDSJezOp3dMmmE7XXBApWpSlIGuIPfjeLcl\ncYt4VcosQZF2eXFC/vHXt6pDG3s+xfoaLScYIg4PbyR7iB/biQjtZLPB+lh2TR8A\nXorK9AGD5NPCEJaJJYiew3cRyH3YXKaGr3dskPXLlaK0OTuW4xnYitmvZXoczAFS\nabONK9bOFQKBgA95xLffkgzyB1sXqssUrDOBq+49DiSPcTET6a1tAxm2IO3z7XF1\na/6+HXIRj9D2SBQeGfroHS2DW8MWf46jg5MKMIYF6zUHhLkqLbY1wLy9AfMUBfpP\nUSQs20Es25Ign594qpwwX56GBD4b4GeHoPZyvDpl58wdo2ZvFgaxMIbZAoGAFLU8\nApkp/lhwIGNyvkwOkBimNrx08OtiUMRBlBgQFhBX/y60ZH+u4SzuEDLTEDp+DLpK\nUex5KjgvhiTBzuZQBOSZehHrSa0L0wN99cXZqF+SJltwGg+iyNJGF3CERh/LIRaF\nVCNstSUHpW7GWnYCg/4auVfsko3fy3kzAkRBpIkCgYEAhRL7DEZF4j7R1ZuQnSkf\nsrq7Yw5+NcYB4ojcGd8Sm6OUhQjPEPbbObCcSGm7leGhxGmXmF+zCNn7atI816+y\n+tJX5pAt6oh5S0ZBFxdF3m++iWcGO0Z5iaJE3Hn/6JIjIdSyHlxQvcVcgj/FcgcR\nHvz7U+kH1jt4ai35dJ6Bbmg=\n-----END PRIVATE KEY-----\n",
+  "client_email": "sm-teachers-android@appspot.gserviceaccount.com",
+  "client_id": "101386634984787775297",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sm-teachers-android%40appspot.gserviceaccount.com"
+}
